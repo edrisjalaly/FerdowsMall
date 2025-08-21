@@ -6,6 +6,7 @@ import NotFound from '@/views/auth/NotFound.vue'
 import AcceessDenied from '@/views/auth/AcceessDenied.vue'
 import ContactUs from '@/views/Home/ContactUs.vue'
 import ProductList from '@/views/Product/ProductList.vue'
+import Signup from '@/views/auth/Signup.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,6 +20,11 @@ const router = createRouter({
       path: '/sign-in',
       name: APP_ROUTE_NAMES.SIGN_IN,
       component: SignIn,
+    },
+    {
+      path: '/sign-up',
+      name: APP_ROUTE_NAMES.SIGN_UP,
+      component: Signup,
     },
     {
       path: '/sing-up',
