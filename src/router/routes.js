@@ -7,6 +7,7 @@ import AcceessDenied from '@/views/auth/AcceessDenied.vue'
 import ContactUs from '@/views/Home/ContactUs.vue'
 import ProductList from '@/views/Product/ProductList.vue'
 import Signup from '@/views/auth/Signup.vue'
+import ProductUpsert from '@/views/Product/ProductUpsert.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -45,6 +46,11 @@ const router = createRouter({
       path: '/product-list',
       name: APP_ROUTE_NAMES.PRODUCT_LIST,
       component: ProductList,
+    },
+    {
+      path: '/product-create',
+      name: APP_ROUTE_NAMES.PRODUCT_CREATE,
+      component: ProductUpsert,
     },
   ],
 })
