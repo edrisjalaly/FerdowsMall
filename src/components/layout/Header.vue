@@ -36,11 +36,11 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              Dropdown
+              <i class="bi bi-laptop"></i>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><button @click="themeStore.setTheme('light')" class="dropdown-item" href="#"><i class="bi bi-sun"></i> Light</button></li>
+              <li><button @click="themeStore.setTheme('dark')"  class="dropdown-item"  href="#"><i class="bi bi-moon-stars-fill"></i> Dark</button></li>
               <li><hr class="dropdown-divider" /></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
@@ -61,9 +61,10 @@
 <script setup>
 import { RouterLink, useRouter } from 'vue-router';
 import { APP_ROUTE_NAMES } from '@/constants/routeNames';
+import { usethemeStore } from '@/stores/themeStore';
 import Home from '@/views/Home/Home.vue'
 
-
+const themeStore = usethemeStore();
 const router = useRouter();
 
 </script>
