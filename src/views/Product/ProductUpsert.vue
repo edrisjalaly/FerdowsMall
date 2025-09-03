@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useRoute, useRouter } from 'vue-router';
 import { reactive, ref } from 'vue';
+import { PRODUCT_CATEGORIES } from '@/constants/appConstants';
 
 const route = useRoute();
 const loading = ref(false);
@@ -96,12 +97,9 @@ async function handleSubmit() {
             </div>
             <div class="form-group">
                 <label for="category">Category</label>
+
                 <select class="form-control" id="category" v-model="productObj.category">
-                    <option value="">Select a category</option>
-                    <option value="electronics">Electronics</option>
-                    <option value="clothing">Clothing</option>
-                    <option value="home">Home</option>
-                    <option value="books">Books</option>
+                    <option v-for="option in PRODUCT_CATEGORIES" :key="option" :value="option"> {{ option }} </option>
                 </select>
             </div>
             <div class="form-group">
