@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { useRoute, useRouter } from 'vue-router';
-import { reactive, ref } from 'vue';
+import { onMounted, reactive, ref } from 'vue';
 import { PRODUCT_CATEGORIES } from '@/constants/appConstants';
+import { useSwal } from '@/utility/useSwal'
+const { showSuccess, showConfirm, showError } = useSwal();
 
 const route = useRoute();
 const loading = ref(false);
@@ -43,6 +45,7 @@ async function handleSubmit() {
                 bestSeller: Boolean(productObj.isBestSeller)
             }
             await new Promise((resolve) => setTimeout(resolve, 200));
+            showSuccess("product created successfully");
             console.log(productDate);
         }
 
